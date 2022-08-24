@@ -19,6 +19,10 @@ function Login() {
 
     const login = () => {
         console.log(loginValue);
+        const trueLogin=names.some(item => item.login === loginValue && item.passworrd === passValue)
+        if(trueLogin){
+            console.log(11)
+        }
     }
 
     return (
