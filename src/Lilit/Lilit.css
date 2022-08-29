@@ -5,37 +5,37 @@
     padding: 1rem;
   }
   
-  table {
+ .app-container table {
     border-collapse: collapse;
     width: 100%;
   }
   
-  th,
-  td {
+.app-container th,
+ .app-container td {
     border: 1px solid #370b2a;
     text-align: left;
     padding: 5px;
     font-size: 25px;
   }
   
-  th {
+  .app-container th {
     background-color: rgb(205, 43, 172);
   }
   
-  td {
+  .app-container td {
     background-color: rgb(255, 163, 244);
   }
   
-  form {
+  .app-container form {
     display: flex;
     gap: 0px;
   }
   
-  form td:last-child {
+  .app-container form td:last-child {
     display: flex;
     justify-content: space-evenly;
   }
   
-  form * {
+  .app-container form * {
     font-size: 25px;
   }
