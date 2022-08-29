@@ -1,26 +1,46 @@
 import React, {useState} from "react";
+import {nanoid} from "nanoid";
 import "./Lilit.css";
 import data from "./mock-data.json";
 
 const Lilittable = () => {
   const [contacts, setContacts] = useState(data);
-  const [addformData, setaddformData] = useState({
+  const [addFormData, setAddFormData] = useState({
     fullName: "",
     address: "",
     phoneNumber: "",
     email: "",
   });
   const handleAddFormChange = (event) => {
-    event.reventDafault();
+    event.preventDefault();
+
+
 
     const fieldName = event.target.getAttribute("name");
     const fieldValue = event.target.value;
 
-    const newformData = {...addformData};
+console.log(fieldValue)
+console.log("fieldName",fieldName)
+    const newformData = {...addFormData};
     newformData[fieldName] = fieldValue
 
-    setaddformData(newformData);
+    setAddFormData(newformData);
   };
+  const handleAddFormSubmit = (event) => {
+    event.preventDefault();
+
+    const newContact = {
+      id: nanoid(),
+      fullName: addFormData.fullName,
+      address: addFormData.address,
+      phoneNumber: addFormData.phoneNumber,
+      email: addFormData.email,
+    };
+
+    const newContacts = [...contacts, newContact];
+    setContacts(newContacts);
+  };
+
   return <div className="app-container">
     <table>
       <thead>
@@ -35,7 +55,7 @@ const Lilittable = () => {
         {contacts.map((contact)=> (
         <tr>
           <td>{contact.fullName}</td>
-          <td>{contact.addres}</td>
+          <td>{contact.address}</td>
           <td>{contact.phoneNumber}</td>
           <td>{contact.email}</td>
         </tr>
@@ -43,31 +63,31 @@ const Lilittable = () => {
       </tbody>
     </table>
     <h2>Добавить контакт</h2>
-    <form>
+    <form onSubmit={handleAddFormSubmit}>
       <input
       type="text"
-       name="fulName"
+       name="fullName"
        required="required"
        placeholder="Enter a name..."
        onChange={handleAddFormChange}
        />
        <input
        type="text"
-       name="Адрес"
+       name="address"
        required="required"
        placeholder="Enter an addres..."
        onChange={handleAddFormChange}
        />
         <input
       type="text"
-       name="Номер телефона"
+       name="phoneNumber"
        required="required"
        placeholder="Enter a phone number..."
        onChange={handleAddFormChange}
        />
        <input
       type="text"
-       name="Эл. адрес"
+       name="email"
        required="required"
        placeholder="Enter an email..."
        onChange={handleAddFormChange}
