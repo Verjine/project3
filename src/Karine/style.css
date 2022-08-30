@@ -1,0 +1,44 @@
+
+.container{
+  display:flex;
+  flex-direction: column;
+  gap: 5px;
+  padding:1rem;
+
+}
+table{
+  border-collapse:collapse;
+  width:100%;
+  
+}
+th, td{
+  border:1px solid black;
+  text-align: left;
+  padding:8px;
+  font-size:25px;
+}
+th{
+  background-color: aquamarine;
+}
+td{
+  background-color: rgb(170, 233, 212);
+}
+
+form{
+  display:flex;
+  gap:5px;
+  
+  
+
+}
+form td:last child{
+  display:flex;
+  justify-content: center;
+
+}
+
+  
+
+   input{
+width: 60%;
+} 
