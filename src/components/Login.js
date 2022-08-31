@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 function Login() {
     const [loginValue, setLoginValue] = useState('');
     const [passValue, setPassValue] = useState('')
+
     const names = [
         { login: 'zaruhi', password: 'pass' },
         { login: 'karine', password: 'pass' },
@@ -11,17 +12,21 @@ function Login() {
     ]
 
     const handleChange = (e) => {
+
         setLoginValue(e.target.value);
     }
     const Changeit = (e) => {
         setPassValue(e.target.value);
     }
 
-    const login = () => {
-        console.log(loginValue);
+    const login = () => { 
+        const trueLogin  = names.some(item => item.login === loginValue &&
+             item.password === passValue)
+        if (trueLogin){
+            console.log(true)
+        } 
     }
 
-    
 
     return (
         <div>
