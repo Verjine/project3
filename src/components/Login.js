@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
+import Menu from "./Menu";
 
 function Login() {
     const [loginValue, setLoginValue] = useState('');
@@ -16,12 +18,14 @@ function Login() {
     const Changeit = (e) => {
         setPassValue(e.target.value);
     }
-
+    let navigate = useNavigate();
     const login = () => {
-        console.log(loginValue);
-        const trueLogin=names.some(item => item.login === loginValue && item.passworrd === passValue)
+        console.log(2222)
+        console.log(loginValue,passValue);
+        const trueLogin=names.some(item => item.login === loginValue && item.password === passValue)
         if(trueLogin){
-            console.log(11)
+            navigate("/menu");
+            
         }
     }
 
@@ -29,9 +33,10 @@ function Login() {
         <div>
             <input type='text' value={loginValue} onChange={(e) => handleChange(e)} placeholder="Enter your name" />
             <input type='password' value={passValue} onChange={(e) => Changeit(e)} placeholder="Enter your password" />
-            <button onClick={login}>Login</button>
+            <button onClick={() => login()} >Login</button>
         </div>
     )
+    
 }
 
 export default Login;
