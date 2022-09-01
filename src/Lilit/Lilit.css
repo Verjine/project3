@@ -5,11 +5,14 @@
     padding: 1rem;
   }
   
+
  .app-container table {
+
     border-collapse: collapse;
     width: 100%;
   }
   
+ 
 .app-container th,
  .app-container td {
     border: 1px solid #370b2a;

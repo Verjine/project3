@@ -1,35 +1,35 @@
 [
     {
       "id": 1,
-      "name": "Jenny Chan",
+      "fullName": "Jenny Chan",
       "address": "3 waterfoot road",
       "phoneNumber": "333-999-111",
       "email": "jenny.chan@email.com"
     },
     {
       "id": 2,
-      "name": "Jessica warren",
+      "fullName": "Jessica warren",
       "address": "4 tall town",
       "phoneNumber": "011-222-555",
       "email": "jessica.warren@email.com"
     },
     {
       "id": 3,
-      "name": "Tony Frank",
+      "fullName": "Tony Frank",
       "address": "11 lesly road",
       "phoneNumber": "888-999-777",
       "email": "tony.frank@email.com"
     },
     {
       "id": 4,
-      "name": "Jeremy Clark",
+      "fullName": "Jeremy Clark",
       "address": "333 miltown manor",
       "phoneNumber": "011-666-111",
       "email": "jeremy.clark@email.com"
     },
     {
       "id": 5,
-      "name": "Raymond Edwards",
+      "fullName": "Raymond Edwards",
       "address": "99 blue acres",
       "phoneNumber": "333-777-111",
       "email": "raymon.edwards@email.com"
