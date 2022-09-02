@@ -6,39 +6,39 @@
   padding:1rem;
 
 }
-table{
+ .container table{
   border-collapse:collapse;
   width:100%;
   
 }
-th, td{
+.container th, td{
   border:1px solid black;
   text-align: left;
   padding:8px;
   font-size:25px;
 }
-th{
+.container th{
   background-color: aquamarine;
 }
-td{
+.container td{
   background-color: rgb(170, 233, 212);
 }
 
-form{
+.container form{
   display:flex;
   gap:5px;
   
   
 
 }
-form td:last child{
+.container form td:last child{
   display:flex;
   justify-content: center;
-
+  
 }
 
   
 
-   input{
+.container input{
 width: 60%;
-} 
+   }

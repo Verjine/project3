@@ -1,0 +1,43 @@
+.section{
+    align-items: center;
+    display: flex;
+    flex-direction: column; 
+    padding: 12rem;
+    margin-top: 50px;
+    margin-left: 500px;
+    height: 30vh; 
+    width: 30vh;
+    background-color: rgb(92, 88, 194);
+    
+}
+
+ input[type="text"],
+ input[type="password"],
+ input[type="email"],
+
+button,
+textarea {
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin:10px;
+  box-sizing: 60px;
+  resize:horizontal;
+   width:200px
+
+}    
+.menue{
+    align-items:center;
+    border:1px solid rgb(112, 135, 226);
+    border-radius: 1rem;
+    font-weight: 500;
+    text-decoration:dotted;
+    justify-content:center;
+    width: 200px;
+    margin-top: 50px;
+    margin-left: 80px;
+    font-style: oblique;
+    display: inline-block;
+
+}
