@@ -11,11 +11,11 @@
     
 }
 
- input[type="text"],
- input[type="password"],
- input[type="email"],
+ .section input[type="text"],
+ .section input[type="password"],
+ .section input[type="email"],
 
-button,
+ .section button,
 textarea {
   font-family: 'Nunito', sans-serif;
   font-size: 15px;
