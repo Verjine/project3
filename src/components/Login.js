@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 import Menu from "./Menu";
+import "./menue.css"
 
 function Login() {
     const [loginValue, setLoginValue] = useState('');
@@ -30,10 +31,10 @@ function Login() {
     }
 
     return (
-        <div>
+        <div className="section">
             <input type='text' value={loginValue} onChange={(e) => handleChange(e)} placeholder="Enter your name" />
             <input type='password' value={passValue} onChange={(e) => Changeit(e)} placeholder="Enter your password" />
-            <button onClick={() => login()} >Login</button>
+            <button classname="btn" onClick={() => login()} >Login</button>
         </div>
     )
     

@@ -1,7 +1,7 @@
 import {Outlet,Link}from"react-router-dom";
 export default function Menu() {
   return (
-    <div>
+    <div className="menue">
       <ul>
         <li>
           <Link to="./Lilit">Lilit</Link>
