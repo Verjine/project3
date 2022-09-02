@@ -5,7 +5,6 @@ import Menu from "./Menu";
 function Login() {
     const [loginValue, setLoginValue] = useState('');
     const [passValue, setPassValue] = useState('')
-
     const names = [
         { login: 'zaruhi', password: 'pass' },
         { login: 'karine', password: 'pass' },
@@ -14,21 +13,11 @@ function Login() {
     ]
 
     const handleChange = (e) => {
-
         setLoginValue(e.target.value);
     }
     const Changeit = (e) => {
         setPassValue(e.target.value);
     }
-<<<<<<< HEAD
-
-    const login = () => { 
-        const trueLogin  = names.some(item => item.login === loginValue &&
-             item.password === passValue)
-        if (trueLogin){
-            console.log(true)
-        } 
-=======
     let navigate = useNavigate();
     const login = () => {
         console.log(2222)
@@ -38,9 +27,7 @@ function Login() {
             navigate("/menu");
             
         }
->>>>>>> 8899881f99b48e958273aa2a314b4536138461a4
     }
-
 
     return (
         <div>
