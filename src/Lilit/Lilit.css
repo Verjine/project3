@@ -5,11 +5,14 @@
     padding: 1rem;
   }
   
+
  .app-container table {
+
     border-collapse: collapse;
     width: 100%;
   }
   
+ 
 .app-container th,
  .app-container td {
     border: 1px solid #370b2a;
@@ -18,13 +21,13 @@
     font-size: 25px;
   }
   
-  .app-container th {
+   .app-container th {
     background-color: rgb(205, 43, 172);
-  }
+  } 
   
   .app-container td {
     background-color: rgb(255, 163, 244);
-  }
+  } 
   
   .app-container form {
     display: flex;

@@ -86,7 +86,7 @@ const App = () => {
 
   }
   return (
-    <div className="app-container">
+    <div className="container">
       <form onSubmit={handleEditFormSubmit}>
         <table>
           <thead>

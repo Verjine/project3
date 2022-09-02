@@ -11,7 +11,7 @@ function App() {
     const [userData, setUserData] =  useState(initialValues);
     const [users, setUsers] = useState([]) 
     const handleRemoveClick = (index) => {
-        setUsers
+      
 
     }
     const isFilledFields = userData.userName && userData.userSurname && userData.userSurname;
