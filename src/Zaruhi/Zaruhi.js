@@ -9,12 +9,24 @@ const initialValues = {
 
 function App() {
     const [userData, setUserData] =  useState(initialValues);
-    const [users, setUsers] = useState([])
+    const [users, setUsers] = useState([]) 
+    const handleRemoveClick = (index) => {
+        setUsers
+
+    }
+    const isFilledFields = userData.userName && userData.userSurname && userData.userSurname;
     const handleSubmitUser = (e) => {
         e.preventDefault();
-        setUsers((prevState) => [...prevState, userData])
-        setUserData(initialValues)
+
+        if(isFilledFields) {
+            setUsers((prevState) => [...prevState, userData])
+            setUserData(initialValues)
+        }
+        
     }
+
+    const handleCleanClick = () => setUserData (initialValues);
+        
     return (
         <div className="wrapper">
             <div className="wrapper-content">
@@ -35,7 +47,7 @@ function App() {
                                 <td>
                                     <div>
                                         <button className="edit-action">edit</button>
-                                        <button className="remove-action">remove</button>
+                                        <button className="remove-action" onClick={() => handleRemoveClick(index)}>remove</button>
                                     </div>
                                 </td>
                                 
@@ -45,7 +57,7 @@ function App() {
                     </table>
                 </div>
                 <div>
-                    <form className="inputstyle" onSubmit={handleSubmitUser}>
+                    <form className="inputstyle" onSubmit={handleSubmitUser} onReset={handleCleanClick}>
                         <input placeholder="Write your name" onChange={(e) => setUserData((prevState)=> ({
                             ...prevState,
                             userName: e.target.value
@@ -66,7 +78,7 @@ function App() {
                         />
                         <div className="buttons-wrapper">
                             <button type="reset">Clean</button>
-                            <button tape="submit">Add</button>
+                            <button disabled={!isFilledFields} tape="submit">Add</button>
                         </div>
                     </form>
                 </div>

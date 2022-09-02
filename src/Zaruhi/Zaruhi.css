@@ -51,3 +51,8 @@
 .tablestyle th:first-child {
     min-width: 20px;
 }
+
+td {
+border: 1px solid gray;
+padding: 5px;
+} 
