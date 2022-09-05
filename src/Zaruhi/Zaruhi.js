@@ -10,24 +10,53 @@ const initialValues = {
 function App() {
     const [userData, setUserData] =  useState(initialValues);
     const [users, setUsers] = useState([]) 
-    const handleRemoveClick = (index) => {
-      
+    const [editableUserData, setEditableUserData] = useState({
+        isEdit: false,
+        userIndex: null
+      });
+   
+      const handleRemoveClick = (index) => {
+        setUsers(users.filter((user, userIndex) => userIndex !== index));
+    };
+  
 
-    }
-    const isFilledFields = userData.userName && userData.userSurname && userData.userSurname;
+    
+    const isFilledFields = userData.userName && userData.userSurname && userData.userSalary;
     const handleSubmitUser = (e) => {
         e.preventDefault();
 
-        if(isFilledFields) {
-            setUsers((prevState) => [...prevState, userData])
+        if (isFilledFields) {
+            if (editableUserData.isEdit) {
+              const editedData = users;
+              editedData.splice(editableUserData.userIndex, 1, userData);
+      
+              setUsers(editedData);
+        
+              setEditableUserData({
+                isEdit: false,
+                userIndex: null
+              })
+            } else {
+              setUsers((prevState) => [...prevState, userData]);
+            }
+      
             setUserData(initialValues)
+          }
         }
-        
-    }
 
-    const handleCleanClick = () => setUserData (initialValues);
-        
-    return (
+    const handleCleanClick = () => 
+    setUserData(initialValues);
+    
+   
+    const handleEditClick = (data,index) => {
+        setUserData(data);
+        setEditableUserData({
+            isEdit: true,
+            userIndex: index
+          })
+    }
+      
+    return ( 
         <div className="wrapper">
             <div className="wrapper-content">
                 <div className="table-data">
@@ -38,7 +67,7 @@ function App() {
                         <th>User Salary</th>
                         <th>Actions</th>
                         <tbody>
-                           {users.map((user, index) => (
+                        {users.map((user, index) => (
                             <tr>
                                 <td>{index + 1}</td>
                                 <td>{user.userName}</td>
@@ -46,7 +75,7 @@ function App() {
                                 <td>{user.userSalary}</td>
                                 <td>
                                     <div>
-                                        <button className="edit-action">edit</button>
+                                        <button className="edit-action" onClick={() => handleEditClick(user, index)}>edit</button>
                                         <button className="remove-action" onClick={() => handleRemoveClick(index)}>remove</button>
                                     </div>
                                 </td>
@@ -78,7 +107,7 @@ function App() {
                         />
                         <div className="buttons-wrapper">
                             <button type="reset">Clean</button>
-                            <button disabled={!isFilledFields} tape="submit">Add</button>
+                            <button disabled={!isFilledFields} tape="submit">{editableUserData.isEdit ? 'Edit': 'Add'}</button>
                         </div>
                     </form>
                 </div>
