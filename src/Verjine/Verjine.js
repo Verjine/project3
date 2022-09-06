@@ -6,7 +6,7 @@ import EditableRow from './component/EditableRow';
 import data from './mock-data.json';
 import './Verjine.css';
 
-function Verjne() {
+function Verjine() {
 
     const [contacts, setContacts] = useState(data);
     const [addFormData, setAddFormData] = useState({
@@ -22,6 +22,8 @@ function Verjne() {
         phoneNumber: "",
         email: "",
     });
+
+    
 
     const [editContactId, setEditContactId] = useState(null);
 
@@ -62,6 +64,7 @@ function Verjne() {
 
         const newContacts = [...contacts, newContact];
         setContacts(newContacts);
+        
     };
 
     const handleEditFormSubmit = (event) => {
@@ -73,6 +76,7 @@ function Verjne() {
             address: editFormData.address,
             phoneNumber: editFormData.phoneNumber,
             email: editFormData.email,
+            
         };
 
         const newContacts = [...contacts];
@@ -179,4 +183,4 @@ function Verjne() {
 }
 
 
-export default Verjne;
+export default Verjine;
