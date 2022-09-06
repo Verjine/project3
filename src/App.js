@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 import Login from './components/Login';
 import Karine from './Karine/Karine';
-import Verjine from './Verjine/Verjine';
+import Verjine from './Verjine/Verjine'
 
 function App() {
   const root = ReactDOM.createRoot(
